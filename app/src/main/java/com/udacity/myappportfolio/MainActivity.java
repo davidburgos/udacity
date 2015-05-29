@@ -1,9 +1,12 @@
 package com.udacity.myappportfolio;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -12,6 +15,10 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    public void onClickButton(View button){
+        Toast.makeText(getApplicationContext(),String.format(getString(R.string.toast_text), ((Button)button).getText()),Toast.LENGTH_LONG).show();
     }
 
     @Override
